@@ -1,11 +1,16 @@
 # Architecture
 
-- Bootloader
-  - Load secondary bootloader to RAM
+- Bootloader (The RP2040 does this already in it's bootrom)
+  - Load secondary bootloader to SRAM
   - Jump to secondary bootloader
 - Secondary Bootloader
+  - Load Tertiary bootloader to SRAM
+  - jump
+- Tertiary Bootloader
   - Check for cartridge
   - Validate program on cartridge
+  - Setup XIP on the cartridge chip
+  - load critical drivers to SRAM?
   - Jump to cartridge
 - I/O Drivers
   - USB keyboard
