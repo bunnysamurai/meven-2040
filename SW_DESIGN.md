@@ -1,0 +1,21 @@
+# Architecture
+
+- Bootloader
+  - Load secondary bootloader to RAM
+  - Jump to secondary bootloader
+- Secondary Bootloader
+  - Check for cartridge
+  - Validate program on cartridge
+  - Jump to cartridge
+- I/O Drivers
+  - USB keyboard
+  - 8 button controller
+- Display Drivers
+  - Straight-up frame buffer
+    - 1BPP
+    - 4BPP -> Indexing a palette map
+    - 8BPP -> gray-scale
+    - 24BPP -> full 8-bit RGB channels
+  - Tile Mode
+    - Streams Tiles on-the-fly
+    - low memory footprint, hopefully :)
